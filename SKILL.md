@@ -15,7 +15,7 @@ Use this skill when a matplotlib figure, plot grid, or report graphic needs to s
 - Prefer sparse numeric ticks over dense tick labels. Keep the tick count low before shrinking text.
 - Keep legends outside the data area when they compete with the plot.
 - Reserve dedicated space for titles, subtitles, and legends in dense multi-panel figures.
-- For multi-panel figures, prefer building each panel cleanly first, then assembling and adjusting the combined layout.
+- For multi-panel figures, render each panel as its own figure first, then assemble the final SVG from those panels so each piece stays easy to edit later.
 - Keep all figure text editable in the exported output when possible, ideally as native text in SVG/PDF rather than converted to paths, especially for labels, titles, and legends.
 - Always check that axis labels, tick labels, legends, titles, panel borders, and plotted marks do not overlap each other before considering the figure done.
 - Prefer a single visual encoding for emphasis when possible. If a mark needs to be smaller or larger, encode that directly rather than stacking a smaller overlay on top of a full-size mark.

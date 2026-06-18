@@ -15,12 +15,15 @@ Use this skill when a matplotlib figure, plot grid, or report graphic needs to s
 - Prefer sparse numeric ticks over dense tick labels. Keep the tick count low before shrinking text.
 - Keep legends outside the data area when they compete with the plot.
 - Reserve dedicated space for titles, subtitles, and legends in dense multi-panel figures.
-- For multi-panel figures, render each panel as its own figure first, then assemble the final SVG from those panels so each piece stays easy to edit later.
+- For multi-panel figures, build each panel as its own figure first, then assemble the final multi-panel figure so each piece stays easy to edit later.
+- When panels share the same scale, prefer shared axes and shared labels, and suppress duplicate interior tick labels.
+- If categorical labels are crowded, rotate or transpose the plot, or split it into companion views, rather than shrinking typography below poster-safe size.
+- Keep semantic label colors consistent across related plots and figure families.
 - Keep all figure text editable in the exported output when possible, ideally as native text in SVG/PDF rather than converted to paths, especially for labels, titles, and legends.
 - Always check that axis labels, tick labels, legends, titles, panel borders, and plotted marks do not overlap each other before considering the figure done.
 - Prefer a single visual encoding for emphasis when possible. If a mark needs to be smaller or larger, encode that directly rather than stacking a smaller overlay on top of a full-size mark.
 - Export SVG as the primary archival format and keep PNG alongside it for compatibility.
-- Use 300 dpi for raster export and for any rasterized content embedded in SVG.
+- Use 300 dpi for raster export when rasterization is unavoidable.
 
 ## Workflow
 
@@ -36,6 +39,7 @@ Use this skill when a matplotlib figure, plot grid, or report graphic needs to s
 - Axis labels should read larger than tick labels.
 - Multi-panel figures should still have breathing room between panels.
 - Title stacks should not overlap panel titles or legends.
+- Interior panels should avoid repeating labels that the composed figure can carry once.
 - Labels, axes, legends, titles, panels, and plotted marks should not overlap each other.
 - If emphasis is shown by size, the mark itself should change size rather than getting an overlay on top.
 - Numeric axes should usually show only a handful of labels.

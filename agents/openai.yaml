@@ -1,7 +1,7 @@
 interface:
   display_name: "Poster Ready Plots"
   short_description: "Make matplotlib figures poster-ready"
-  default_prompt: "Use $poster-ready-plots to make matplotlib figures poster-ready with 18-24 pt text, sparse ticks, dedicated title/legend space, overlap checks, and SVG + PNG exports."
+  default_prompt: "Use $poster-ready-plots to make matplotlib figures poster-ready with 18-24 pt text, sparse ticks, panel-first multi-panel layouts, editable SVG/PDF text, dedicated title/legend space, overlap checks, and SVG + PNG exports."
 
 policy:
   allow_implicit_invocation: true
